@@ -112,3 +112,7 @@ interface IGoodConstructor {
     readonly prototype: IGood;
     new (path: string): IGood;
 }
+
+declare const Good: IGoodConstructor;
+
+const aaaa = new Good("sssss");
