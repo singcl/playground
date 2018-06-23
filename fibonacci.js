@@ -102,6 +102,7 @@ function fibonacci5(n) {
     return a;
 }
 
+// 方案6：尾调用优化！！！
 function fibonacci6(n, n1, n2) {
     if (!isPositiveInteger(n)) return '参数必须为大于0的整数！'
     if(n <= 1) {
