@@ -6,7 +6,7 @@
     "@singcl/promise": "^0.2.1",
     "@singcl/thunk-run": "^0.4.1",
     "@std/esm": "^0.26.0",
-    "@types/node": "^10.0.8",
+    "@types/node": "^10.3.5",
     "express": "^4.16.3",
     "greenlet": "^0.1.2",
     "promise": "^8.0.1",
