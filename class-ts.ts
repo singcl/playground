@@ -12,7 +12,8 @@ class Greeter {
     public callback: () => void; // 类的实例方法 > 不直接赋值，在constructor中赋值
     protected xxxx: string = "类的受保护的属性"; // 受保护的实例属性 > 在类内部可用，还可以在派生类的方法中使用
     private xxx: string = "类的私有属性"; // 私有实例属性 > 在类内部可用
-    constructor(message: string, callback: () => void) {
+    // 使用了参数属性：参数属性通过给构造函数参数添加一个访问限定符来声明来创建同时初始化一个实例成员
+    constructor(private kkk: string, message: string, callback: () => void) {
         this.greeting = message;
         this.callback = callback;
     }
@@ -34,7 +35,7 @@ class Greeter {
     }
 }
 
-const g = new Greeter("hello", () => 3);
+const g = new Greeter("kkk", "hello", () => 3);
 console.log(g.greet<string>("hhhee"));
 console.log(Greeter.greeting2);
 console.log(Greeter.greetFunc);
