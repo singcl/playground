@@ -49,3 +49,7 @@ console.log(Object.getPrototypeOf(g));
 // 也就是说：
 // public private protected readonly 属于一类概念
 // 实例属性/方法 原型属性/方法 静态属性方法 属于一类概念
+
+// 在TS文档中：
+// 把TS的类分为：静态部分和实例部分两部分，也就是说没有原型部分的概念。
+// 通过Object.getPrototypeOf(g)获取的原型对象也是空。 这个我有点搞不太懂？？？
