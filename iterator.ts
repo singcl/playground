@@ -1,4 +1,4 @@
-interface IIterable {
+/* interface IIterable {
     [Symbol.iterator](): IIterator;
 }
 
@@ -20,3 +20,4 @@ interface IIterableIIterator {
 interface IIterableIIterator2 extends IIterable, IIterator {
     //
 }
+ */

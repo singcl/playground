@@ -6,12 +6,13 @@
     "@singcl/promise": "^0.2.1",
     "@singcl/thunk-run": "^0.4.1",
     "@std/esm": "^0.26.0",
-    "@types/node": "^10.0.8",
+    "@types/node": "^10.3.5",
+    "co": "^4.6.0",
     "express": "^4.16.3",
     "greenlet": "^0.1.2",
     "promise": "^8.0.1",
     "top-level-await": "^1.1.0",
     "tslint": "^5.10.0",
-    "typescript": "^2.1.6"
+    "typescript": "^2.9.2"
   }
 }
