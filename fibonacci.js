@@ -65,7 +65,7 @@ let fibonacci3 = (function() {
     }
 })()
 
-// 方案三
+// 方案四
 // 斐波那契数列求和除了可以用递归的方法解决，还可以用动态规划的方法解决
 // 效率更高，不需要缓存那么多值，内存占用更少
 function fibonacci4(n) {
@@ -88,7 +88,7 @@ function fibonacci4(n) {
     return sum
 }
 
-// 方案四 解构赋值
+// 方案五 解构赋值
 // 为什么这里解构赋值的效率还不如上面？
 function fibonacci5(n) {
     if (!isPositiveInteger(n)) return '参数必须为大于0的整数！'
