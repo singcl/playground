@@ -8,3 +8,5 @@ main() {
   var number = 42; // Declare and initialize a variable.
   printInteger(number); // Call a function.
 }
+
+List<Object> x = ["333", 2];
