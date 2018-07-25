@@ -1,0 +1,13 @@
+{
+  "version": 3,
+  "file": "coffee.js",
+  "sourceRoot": "",
+  "sources": [
+    "coffee.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;EAAA;AAAA,MAAA,KAAA,EAAA,IAAA,EAAA,IAAA,EAAA,GAAA,EAAA,MAAA,EAAA,QAAA,EAAA,IAAA,EAAA;;EACA,MAAA,GAAW;;EACX,QAAA,GAAW;;EAGX,IAAgB,QAAhB;;IAAA,MAAA,GAAS,CAAC,GAAV;GALA;;;EAQA,MAAA,GAAS,QAAA,CAAC,CAAD,CAAA;WAAO,CAAA,GAAI;EAAX,EART;;;EAWA,IAAA,GAAO,CAAC,CAAD,EAAI,CAAJ,EAAO,CAAP,EAAU,CAAV,EAAa,CAAb,EAXP;;;EAcA,IAAA,GACE;IAAA,IAAA,EAAQ,IAAI,CAAC,IAAb;IACA,MAAA,EAAQ,MADR;IAEA,IAAA,EAAQ,QAAA,CAAC,CAAD,CAAA;aAAO,CAAA,GAAI,MAAA,CAAO,CAAP;IAAX;EAFR,EAfF;;;EAoBA,IAAA,GAAO,QAAA,CAAC,MAAD,EAAA,GAAS,OAAT,CAAA;WACL,KAAA,CAAM,MAAN,EAAc,OAAd;EADK;;EAIP,IAAsB,8CAAtB;;IAAA,KAAA,CAAM,YAAN,EAAA;GAxBA;;;EA2BA,KAAA;;AAAuB;IAAA,KAAA,sCAAA;;mBAAd,IAAI,CAAC,IAAL,CAAU,GAAV;IAAc,CAAA;;;AA3BvB",
+  "sourcesContent": [
+    "# Assignment:\r\nnumber   = 42\r\nopposite = true\r\n\r\n# Conditions:\r\nnumber = -42 if opposite\r\n\r\n# Functions:\r\nsquare = (x) -> x * x\r\n\r\n# Arrays:\r\nlist = [1, 2, 3, 4, 5]\r\n\r\n# Objects:\r\nmath =\r\n  root:   Math.sqrt\r\n  square: square\r\n  cube:   (x) -> x * square x\r\n\r\n# Splats:\r\nrace = (winner, runners...) ->\r\n  print winner, runners\r\n\r\n# Existence:\r\nalert \"I knew it!\" if elvis?\r\n\r\n# Array comprehensions:\r\ncubes = (math.cube num for num in list)"
+  ]
+}
