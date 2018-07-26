@@ -1,3 +1,5 @@
+# require 'coffeescript/register'
+
 # Assignment:
 number   = 42
 opposite = true
