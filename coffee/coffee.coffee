@@ -1,5 +1,5 @@
 # require 'coffeescript/register'
-
+# coffeescript 是类Python/Ruby语法
 # Assignment:
 number   = 42
 opposite = true
