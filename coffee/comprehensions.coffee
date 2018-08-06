@@ -48,3 +48,15 @@ ages = for child, age of yearOld
 
 # ages = ("#{child} is #{age}" for child, age of yearOld) 貌似这样写也可以？
 console.log ages
+
+
+if this.studyingEconomics
+    buy() while supply > demand
+    sell() until supply > demand
+
+num = 6
+lyrics = while num -= 1
+    "#{num} little monkeys, jumping on the bed.
+    One fell out and bumped his head."
+
+console.log lyrics
