@@ -5,3 +5,11 @@ class Persion
 
 tim = new Persion { name: 'Tim', age: 13 }
 console.log tim
+
+# coffee的箭头函数和ES的箭头函数一样
+Account = (customer, cart) ->
+  @customer = customer
+  @cart = cart
+
+  $('.shopping_cart').on 'click', (e) =>
+    @customer.purchase @cart
