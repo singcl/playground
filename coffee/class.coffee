@@ -19,6 +19,9 @@ tom = new Horse "Tommy the Palomino"
 sam.move()
 tom.move()
 
+Animal::name = "xxxx"
+Animal::move("3000") # ::快速访问对象的原型对象
+
 # Static methods can be defined using @ before the method name:
 class Teenager
   @say: (speech) ->
@@ -38,3 +41,4 @@ String::dasherize = ->
   this.replace(/_/g, '-')
 
 console.log "s_RRR_kkWWW_".dasherize()
+
