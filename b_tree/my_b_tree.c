@@ -17,6 +17,8 @@ typedef struct TreeNode
 
 // 函数申明
 void CreateTree(PTREE *); // 树的先序创建函数
+void PreOrderTree(PTREE); // 树的前序遍历函数
+void InOrderTree(PTREE);  // 树的中序遍历函数
 
 // 主函数
 int main()
@@ -24,6 +26,12 @@ int main()
     PTREE Root;
     printf("请先序输入二叉树的节点数据(如：QWERT******)： ");
     CreateTree(&Root);
+
+    printf("\n前序遍历结果为：");
+    PreOrderTree(Root);
+
+    printf("\n中序遍历结果为：");
+    InOrderTree(Root);
 
     return 0;
 }
@@ -51,5 +59,35 @@ void CreateTree(PTREE *Root)
             CreateTree(&(*Root)->left);
             CreateTree(&(*Root)->right);
         }
+    }
+}
+
+// 树的前序遍历函数定义
+void PreOrderTree(PTREE Root)
+{
+    if (Root == NULL)
+    {
+        return;
+    }
+    else
+    {
+        putchar(Root->Element);
+        PreOrderTree(Root->left);
+        PreOrderTree(Root->right);
+    }
+}
+
+// 树的中序遍历函数定义
+void InOrderTree(PTREE Root)
+{
+    if (Root == NULL)
+    {
+        return;
+    }
+    else
+    {
+        InOrderTree(Root->left);
+        putchar(Root->Element);
+        InOrderTree(Root->right);
     }
 }
