@@ -1,71 +1,70 @@
-//    ¶þ²æÊ÷µÄÊµÏÖ£¨CÓïÑÔ£©
-//    Á´±í£¬µÝ¹éÊµÏÖ
-//    ±àÒë»·¾³£ºvisual studio code
-//    ²Ù×÷ÏµÍ³£ºwin7+
+//    äºŒå‰æ ‘çš„å®žçŽ°ï¼ˆCè¯­è¨€ï¼‰
+//    é“¾è¡¨ï¼Œé€’å½’å®žçŽ°
+//    ç¼–è¯‘çŽ¯å¢ƒï¼švisual studio code
+//    æ“ä½œç³»ç»Ÿï¼šwin7+
 
-// Èç¹û³öÏÖÖÐÎÄÊä³öÂÒÂëµÄ»° ¿ÉÒÔ½«¸ÃÎÄ¼þ±£´æÎªGBK ÔÙ±àÒë¡£
+// å¦‚æžœå‡ºçŽ°ä¸­æ–‡è¾“å‡ºä¹±ç çš„è¯ å¯ä»¥å°†è¯¥æ–‡ä»¶ä¿å­˜ä¸ºGBK å†ç¼–è¯‘ã€‚
 
 #include <stdio.h>
 #include <malloc.h>
 #include <stdlib.h>
-
-typedef char Elementtype;      // ¶¨ÒåÊý¾ÝÀàÐÍ£¬¿É¸ù¾ÝÐèÒª×ÔÐÐ¶¨ÖÆ
-typedef struct TreeNode *Node; // NodeÏàµ±ÓÚ struct TreeNode *
+typedef char Elementtype;      // å®šä¹‰æ•°æ®ç±»åž‹ï¼Œå¯æ ¹æ®éœ€è¦è‡ªè¡Œå®šåˆ¶
+typedef struct TreeNode *Node; // Nodeç›¸å½“äºŽ struct TreeNode *
 typedef struct TreeNode
 {
     Elementtype Element;
-    Node left;  // Ê÷½ÚµãµÄ×ó×Ó½Úµã
-    Node right; // Ê÷½ÚµãµÄÓÒ×Ó½Úµã
+    Node left;  // æ ‘èŠ‚ç‚¹çš„å·¦å­èŠ‚ç‚¹
+    Node right; // æ ‘èŠ‚ç‚¹çš„å³å­èŠ‚ç‚¹
 } TREE, *PTREE;
 
-// º¯ÊýÉêÃ÷
-void CreateTree(PTREE *); // Ê÷µÄÏÈÐò´´½¨º¯Êý
-void PreOrderTree(PTREE); // Ê÷µÄÇ°Ðò±éÀúº¯Êý
-void InOrderTree(PTREE);  // Ê÷µÄÖÐÐò±éÀúº¯Êý
+// å‡½æ•°ç”³æ˜Ž
+void CreateTree(PTREE *); // æ ‘çš„å…ˆåºåˆ›å»ºå‡½æ•°
+void PreOrderTree(PTREE); // æ ‘çš„å‰åºéåŽ†å‡½æ•°
+void InOrderTree(PTREE);  // æ ‘çš„ä¸­åºéåŽ†å‡½æ•°
 
-// Ö÷º¯Êý
+// ä¸»å‡½æ•°
 int main()
 {
     PTREE Root;
-    printf("ÇëÏÈÐòÊäÈë¶þ²æÊ÷µÄ½ÚµãÊý¾Ý(Èç£ºQWERT******)£º ");
+    printf("è¯·å…ˆåºè¾“å…¥äºŒå‰æ ‘çš„èŠ‚ç‚¹æ•°æ®(å¦‚ï¼šQWERT******)ï¼š ");
     CreateTree(&Root);
 
-    printf("\nÇ°Ðò±éÀú½á¹ûÎª£º");
+    printf("\nå‰åºéåŽ†ç»“æžœä¸ºï¼š");
     PreOrderTree(Root);
 
-    printf("\nÖÐÐò±éÀú½á¹ûÎª£º");
+    printf("\nä¸­åºéåŽ†ç»“æžœä¸ºï¼š");
     InOrderTree(Root);
 
     return 0;
 }
 
-// ¶¨ÒåÊ÷ÏÈÐò´´½¨º¯Êý
+// å®šä¹‰æ ‘å…ˆåºåˆ›å»ºå‡½æ•°
 void CreateTree(PTREE *Root)
 {
-    char val = 0;    // ÓÃÓÚÏÂÃæ´æ·ÅÊý¾Ý
-    val = getchar(); // ÊäÈëÊý¾ÝÖµ
-    // Èç¹ûÊäÈë'*'£¬ÔòÖ¸ÏòÎª¿Õ
+    char val = 0;    // ç”¨äºŽä¸‹é¢å­˜æ”¾æ•°æ®
+    val = getchar(); // è¾“å…¥æ•°æ®å€¼
+    // å¦‚æžœè¾“å…¥'*'ï¼Œåˆ™æŒ‡å‘ä¸ºç©º
     if (val == '*')
         (*Root) = NULL;
-    // Èç¹ûÊäÈë·Ç'*'£¬Ôò¸øÊý¾ÝÓò¸³Öµ
+    // å¦‚æžœè¾“å…¥éž'*'ï¼Œåˆ™ç»™æ•°æ®åŸŸèµ‹å€¼
     else
     {
-        (*Root) = (PTREE)malloc(sizeof(TREE)); // ÉêÇëÄÚ´æ¿Õ¼ä
+        (*Root) = (PTREE)malloc(sizeof(TREE)); // ç”³è¯·å†…å­˜ç©ºé—´
         if ((*Root) == NULL)
         {
-            printf("´´½¨½ÚµãÊ§°Ü£¬ÎÞ·¨·ÖÅä¿ÉÓÃÄÚ´æ...");
+            printf("åˆ›å»ºèŠ‚ç‚¹å¤±è´¥ï¼Œæ— æ³•åˆ†é…å¯ç”¨å†…å­˜...");
             exit(-1);
         }
         else
         {
-            (*Root)->Element = val; // ¸ø½ÚµãÊý¾ÝÓò¸³Öµ
+            (*Root)->Element = val; // ç»™èŠ‚ç‚¹æ•°æ®åŸŸèµ‹å€¼
             CreateTree(&(*Root)->left);
             CreateTree(&(*Root)->right);
         }
     }
 }
 
-// Ê÷µÄÇ°Ðò±éÀúº¯Êý¶¨Òå
+// æ ‘çš„å‰åºéåŽ†å‡½æ•°å®šä¹‰
 void PreOrderTree(PTREE Root)
 {
     if (Root == NULL)
@@ -80,7 +79,7 @@ void PreOrderTree(PTREE Root)
     }
 }
 
-// Ê÷µÄÖÐÐò±éÀúº¯Êý¶¨Òå
+// æ ‘çš„ä¸­åºéåŽ†å‡½æ•°å®šä¹‰
 void InOrderTree(PTREE Root)
 {
     if (Root == NULL)
