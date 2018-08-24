@@ -30,7 +30,7 @@ int Get_Height(PTREE);     // 获取树的高度
 int main()
 {
     PTREE Root;
-    printf("请先序输入二叉树的节点数据(如：QWERT******)： ");
+    printf("请先序输入二叉树的节点数据(如：QWERT******,  ABC**DE*G**F***)： ");
     CreateTree(&Root);
 
     printf("\n前序遍历结果为：");
