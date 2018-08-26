@@ -6,5 +6,6 @@
         "*.wxss": "css",
         "*.wxs": "javascript",
         "limits": "c"
-    }
+    },
+    "javascript.validate.enable": false
 }

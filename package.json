@@ -1,20 +1,28 @@
 {
-  "dependencies": {
-    "@singcl/co": "^1.0.0",
-    "@singcl/express": "^0.0.5",
-    "@singcl/express-error": "^0.0.1",
-    "@singcl/promise": "^0.2.1",
-    "@singcl/thunk-run": "^0.4.1",
-    "@std/esm": "^0.26.0",
-    "@types/node": "^10.3.5",
-    "co": "^4.6.0",
-    "coffee-script": "^1.12.7",
-    "coffeescript": "^2.3.1",
-    "express": "^4.16.3",
-    "greenlet": "^0.1.2",
-    "promise": "^8.0.1",
-    "top-level-await": "^1.1.0",
-    "tslint": "^5.10.0",
-    "typescript": "^2.9.2"
-  }
+    "dependencies": {
+        "@singcl/co": "^1.0.0",
+        "@singcl/express": "^0.0.5",
+        "@singcl/express-error": "^0.0.1",
+        "@singcl/promise": "^0.2.1",
+        "@singcl/thunk-run": "^0.4.1",
+        "@std/esm": "^0.26.0",
+        "@types/node": "^10.3.5",
+        "co": "^4.6.0",
+        "coffee-script": "^1.12.7",
+        "coffeescript": "^2.3.1",
+        "express": "^4.16.3",
+        "greenlet": "^0.1.2",
+        "promise": "^8.0.1",
+        "top-level-await": "^1.1.0",
+        "tslint": "^5.10.0",
+        "typescript": "^2.9.2"
+    },
+    "devDependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-preset-flow": "^6.23.0",
+        "flow-bin": "^0.79.1"
+    },
+    "scripts": {
+        "flow": "flow"
+    }
 }
