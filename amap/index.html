@@ -42,35 +42,46 @@
          value 为颜色值 
          */
         var heatmap;
-        map.plugin(["AMap.Heatmap"], function () {
-            //初始化heatmap对象
-            heatmap = new AMap.Heatmap(map, {
-                radius: 25, //给定半径
-                opacity: [0, 0.8]
-                /*,gradient:{
-                 0.5: 'blue',
-                 0.65: 'rgb(117,211,248)',
-                 0.7: 'rgb(0, 255, 0)',
-                 0.9: '#ffea00',
-                 1.0: 'red'
-                 }*/
-            });
-            //设置数据集：该数据为北京部分“公园”数据
-            heatmap.setDataSet({
-                data: heatmapData,
-                max: 100
-            });
+        const points = heatmapData.map((item) => {
+            return new AMap.LngLat(item.lng, item.lat);
         });
+        console.log(points);
 
-        var baidu = [120.51107317175487, 30.087837246840948];
-        AMap.convertFrom(baidu, 'baidu', function (status, result) {
+        AMap.convertFrom(points, 'baidu', function (status, result) {
             if (result.info === 'ok') {
-                var lnglats = result.locations; // Array.<LngLat>
-                console.log(lnglats)
+                var lnglats = result.locations;
+                console.log(lnglats);
+                const rData = lnglats.map((item, index) => {
+                    return {
+                        ...heatmapData[index],
+                        lng: item.getLng(),
+                        lat: item.getLat()
+                    };
+                });
+
+                console.log(rData);
+                map.plugin(["AMap.Heatmap"], function () {
+                    //初始化heatmap对象
+                    heatmap = new AMap.Heatmap(map, {
+                        radius: 25, //给定半径
+                        opacity: [0, 0.8]
+                        /*,gradient:{
+                         0.5: 'blue',
+                         0.65: 'rgb(117,211,248)',
+                         0.7: 'rgb(0, 255, 0)',
+                         0.9: '#ffea00',
+                         1.0: 'red'
+                         }*/
+                    });
+                    //设置数据集：该数据为北京部分“公园”数据
+                    heatmap.setDataSet({
+                        data: rData,
+                        max: 100
+                    });
+                });
             }
         });
 
-        console.log(new AMap.LngLat(120.51107317175487, 30.087837246840948))
         //判断浏览区是否支持canvas
         function isSupportCanvas() {
             var elem = document.createElement('canvas');
