@@ -4,6 +4,7 @@
         "@singcl/express": "^0.0.5",
         "@singcl/express-error": "^0.0.1",
         "@singcl/promise": "^0.2.1",
+        "@singcl/r-ts": "0.1.0",
         "@singcl/thunk-run": "^0.4.1",
         "@std/esm": "^0.26.0",
         "@types/node": "^10.3.5",
