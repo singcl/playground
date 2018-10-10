@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>defined-pseudo-class</title>
+    <style>
+        p {
+            background-color: yellow;
+        }
+
+        simple-custom {
+            background-color: cyan;
+        }
+
+        :defined {
+            font-style: italic;
+        }
+
+        simple-custom:defined {
+            display: block;
+        }
+
+        /* 这在你有一个复杂的自定义元素需要一段时间才能加载到页面中时非常有用 —— 你可能想要隐藏元素的实例直到定义完成为止，这样你就不会在页面上出现一些难看的元素。*/
+        simple-custom:not(:defined) {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1><code>:defined</code> demo</h1>
+    <simple-custom text="Custom element example text"></simple-custom>
+    <p>Standard paragraph example text</p>
+    <script src="main.js"></script>
+</body>
+
+</html>
