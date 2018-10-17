@@ -16,7 +16,7 @@ class ContextSpan extends HTMLElement {
         :host-context(h1)::after {content: "- no links in headers"}
         :host-context(article, aside) {color: gray;}
         :host(.footer) {color: red;}
-        :host(background: rgba(0,0,0,0.1); padding: 2px 5px;)
+        :host { background: rgba(0,0,0,0.1); padding: 2px 5px;}
         `;
     }
 }
