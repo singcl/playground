@@ -6,7 +6,8 @@
         "*.wxss": "css",
         "*.wxs": "javascript",
         "limits": "c",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "stdio.h": "c"
     },
     "javascript.validate.enable": false
 }
