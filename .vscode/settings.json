@@ -5,7 +5,8 @@
         "*.cjson": "jsonc",
         "*.wxss": "css",
         "*.wxs": "javascript",
-        "limits": "c"
+        "limits": "c",
+        "stdlib.h": "c"
     },
     "javascript.validate.enable": false
 }
