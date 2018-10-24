@@ -1,0 +1,13 @@
+#include "../include/b.h"
+#include <stdio.h>
+
+int main(int argc, char **argv) {
+    double  a = 49.0;
+    double  b;
+
+    printf("input a:%f\n",a);
+    b = cal_sqrt(a);
+    printf("sqrt result:%f\n",b);
+    return 0;
+
+}
