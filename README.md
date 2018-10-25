@@ -25,3 +25,6 @@ MinGW 和 CMake 完全是无关的两个工具，所以，只需要安装后，�
 
 MinGW 中 make 为 mingw32-make
 ![mingw32-make](./img/mingw32-make.png)
+
+### #define VS const
+![define-const](./img/const_define.png)
