@@ -9,7 +9,7 @@ int main()
     i = 1;
     while (i)
     {
-        printf("输入一个字母, 判断元音与辅音. 如果想退出,请输入“0”。\n");
+        printf("Please input a letter. If want to Quit, please input '0'. \n");
 
         // 所以这里会一个一个读取字符串中的字符
         scanf("%c", &cLetter);
@@ -26,13 +26,13 @@ int main()
             iInRange = (cLetter == 'a') || (cLetter == 'e') || (cLetter == 'i') || (cLetter == 'o') || (cLetter == 'u') || (cLetter == 'A') || (cLetter == 'E') || (cLetter == 'I') || (cLetter == 'O') || (cLetter == 'U');
             if (iInRange)
             {
-                printf("字母 %c 是元音字母!\n", cLetter);
+                printf("letter %c is vowel!\n", cLetter);
                 printf("----------------------------------------------------------------------\n");
                 continue;
             }
             else
             {
-                printf("字母 %c 是辅音字母!\n", cLetter);
+                printf("letter %c is  consonant!\n", cLetter);
                 printf("----------------------------------------------------------------------\n");
                 continue;
             }
