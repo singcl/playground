@@ -35,6 +35,7 @@ customElements.define(
         }
       }
 
+      // slotchange Event
       const slots = this.shadowRoot.querySelectorAll('slot');
       slots[1].addEventListener('slotchange', (e) => {
         const nodes = slots[1].assignedNodes();
