@@ -3,9 +3,10 @@
 int main()
 {
     int array[6] = {32, 45, 556, 43, 12, 65};
-    int loop, largest;
+    int loop, largest, smallest;
 
     largest = array[0];
+    smallest = array[0];
 
     for (loop = 1; loop < 6; loop++)
     {
@@ -13,8 +14,14 @@ int main()
         {
             largest = array[loop];
         }
+
+        if (smallest > array[loop])
+        {
+            smallest = array[loop];
+        }
     }
 
-    printf("the max number is %d", largest);
+    printf("the max number is %d \n", largest);
+    printf("the min number is %d \n", smallest);
     return 0;
 }
