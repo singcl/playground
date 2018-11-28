@@ -1,18 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(int argc, char **argv, char *env[]) {
+int main(int argc, char **argv, char *env[])
+{
     int n1, n2, gcd;
     int len = 1;
-//    http://www.runoob.com/w3cnote/c-void-intro.html
-// malloc·µ»ØÖµÊÇvoid* ;(int *) Ç¿ÖÆÀàĞÍ×ª»»Îª int *
+    //    http://www.runoob.com/w3cnote/c-void-intro.html
+    // mallocè¿”å›å€¼æ˜¯void* ;(int *) å¼ºåˆ¶ç±»å‹è½¬æ¢ä¸º int *
     int *array = (int *)malloc(sizeof(int) * len);
 
-    printf("ÊäÈëÁ½¸öÕıÕûÊı£¬ÒÔ¿Õ¸ñ¸ô¿ª:");
+    printf("è¾“å…¥ä¸¤ä¸ªæ­£æ•´æ•°ï¼Œä»¥ç©ºæ ¼éš”å¼€:");
     scanf("%d %d", &n1, &n2);
-    for (int i = 1; i <=n1 && i <=n2; ++i) {
-        // ÅĞ¶Ï i ÊÇ·ñÎª×î´ó¹«Ô¼Êı
-        if (n1 % i == 0 && n2 % i == 0) {
+    for (int i = 1; i <= n1 && i <= n2; ++i)
+    {
+        // åˆ¤æ–­ i æ˜¯å¦ä¸ºæœ€å¤§å…¬çº¦æ•°
+        if (n1 % i == 0 && n2 % i == 0)
+        {
             gcd = i;
             array[len - 1] = i;
             len = len + 1;
@@ -21,10 +24,11 @@ int main(int argc, char **argv, char *env[]) {
         }
     }
 
-    printf("%d ºÍ %d ×î´ó¹«Ô¼ÊıÊÇ %d \n", n1, n2, gcd);
-    printf("array³¤¶È%d: \n", sizeof(array));
+    printf("%d å’Œ %d æœ€å¤§å…¬çº¦æ•°æ˜¯ %d \n", n1, n2, gcd);
+    printf("arrayé•¿åº¦%d: \n", sizeof(array));
 
-    for (int i = 0; i <= (sizeof(array) / sizeof(int)); i++) {
-        printf("%d ºÍ %d ¹«Ô¼ÊıÓĞ %d \n", n1, n2, array[i]);
+    for (int i = 0; i <= (sizeof(array) / sizeof(int)); i++)
+    {
+        printf("%d å’Œ %d å…¬çº¦æ•°æœ‰ %d \n", n1, n2, array[i]);
     }
 }
