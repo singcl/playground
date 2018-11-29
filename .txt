@@ -1,0 +1,9 @@
+
+1、项目：大型综合电商平台开发（NodeJS,Jquery,Vue,Scss等技术）。
+2、项目：使用AngularJS开发管理后台和拖拽组合表单组件。使用基于Framework7开发移动功能。
+3、项目：通用表单流程设计。主要构建PC端和移动端用户界面。
+4、项目：使用vue开发高级表单流程Admin管理后台（类似钉钉管理后台）
+早期个人作品:
+vue2.0管理后台github源码：https://github.com/singcl/vue-admin-singcl
+angular1.x管理后台：http://119.10.57.69:880/jnshu044/
+github源码:https://github.com/singcl/angular-new
