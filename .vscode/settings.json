@@ -9,5 +9,6 @@
         "stdlib.h": "c",
         "stdio.h": "c"
     },
-    "javascript.validate.enable": false
+    "javascript.validate.enable": false,
+    "debug.node.autoAttach": "off"
 }
