@@ -1,13 +1,16 @@
 {
     "typescript.tsdk": "node_modules\\typescript\\lib",
     "files.associations": {
+        "*.html": "html",
+        ".eslintrc": "jsonc",
         "*.json": "jsonc",
         "*.cjson": "jsonc",
         "*.wxss": "css",
         "*.wxs": "javascript",
         "limits": "c",
         "stdlib.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "windows.h": "c"
     },
     "javascript.validate.enable": false,
     "debug.node.autoAttach": "off"
