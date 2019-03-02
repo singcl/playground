@@ -1,41 +1,39 @@
 {
-    "dependencies": {
-        "@singcl/co": "^1.0.0",
-        "@singcl/express": "^0.0.5",
-        "@singcl/express-error": "^0.0.1",
-        "@singcl/promise": "^0.2.1",
-        "@singcl/r-ts": "0.1.0",
-        "@singcl/thunk-run": "^0.4.1",
-        "@std/esm": "^0.26.0",
-        "@types/node": "^10.3.5",
-        "co": "^4.6.0",
-        "coffee-script": "^1.12.7",
-        "coffeescript": "^2.3.1",
-        "express": "^4.16.3",
-        "greenlet": "^0.1.2",
-        "progress-estimator": "^0.2.2",
-        "promise": "^8.0.1",
-        "rxjs": "^6.4.0",
-        "rxjs-compat": "^6.4.0",
-        "top-level-await": "^1.1.0",
-        "tslint": "^5.10.0",
-        "typescript": "^2.9.2"
-    },
-    "devDependencies": {
-        "babel-cli": "^6.26.0",
-        "babel-core": "^6.26.3",
-        "babel-plugin-transform-class-properties": "^6.24.1",
-        "babel-preset-env": "^1.7.0",
-        "babel-preset-flow": "^6.23.0",
-        "babel-register": "^6.26.0",
-        "eslint": "^5.4.0",
-        "eslint-config-airbnb": "^17.1.0",
-        "eslint-plugin-import": "^2.14.0",
-        "eslint-plugin-jsx-a11y": "^6.1.1",
-        "eslint-plugin-react": "^7.11.1",
-        "flow-bin": "^0.79.1"
-    },
-    "scripts": {
-        "flow": "flow"
-    }
+  "dependencies": {
+    "@singcl/co": "^1.0.0",
+    "@singcl/express": "^0.0.5",
+    "@singcl/express-error": "^0.0.1",
+    "@singcl/promise": "^0.2.1",
+    "@singcl/r-ts": "0.1.0",
+    "@singcl/thunk-run": "^0.4.1",
+    "@std/esm": "^0.26.0",
+    "@types/node": "^10.3.5",
+    "co": "^4.6.0",
+    "coffee-script": "^1.12.7",
+    "coffeescript": "^2.3.1",
+    "express": "^4.16.3",
+    "greenlet": "^0.1.2",
+    "progress-estimator": "^0.2.2",
+    "promise": "^8.0.1",
+    "rxjs": "^5.5.12",
+    "tslint": "^5.10.0",
+    "typescript": "^2.9.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-flow": "^6.23.0",
+    "babel-register": "^6.26.0",
+    "eslint": "^5.4.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "flow-bin": "^0.79.1"
+  },
+  "scripts": {
+    "flow": "flow"
+  }
 }

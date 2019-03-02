@@ -1,9 +1,9 @@
-// Rxjs doesn't export default, so import Rx from .. will be undefined.
+// V6: Rxjs doesn't export default, so import Rx from .. will be undefined.
 // Rxjs V5 和 V6 使用方法有较大区别
 
 import { Observable } from 'rxjs';
 
-const observable = Observable.create((subscriber) => {
+const observable = new Observable((subscriber) => {
   subscriber.next(1);
   subscriber.next(2);
   subscriber.next(3);
