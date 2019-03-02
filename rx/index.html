@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Rxjs</title>
+    </head>
+    <body>
+        <button>Rxjs</button>
+        <button>count</button>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.4.4/babel.min.js"></script> -->
+        <script src="  https://unpkg.com/@reactivex/rxjs@5.5.12/dist/global/Rx.js"></script>
+        <script>
+            var buttons = document.querySelectorAll('button');
+
+            // 从事件创建observable对象
+            Rx.Observable.fromEvent(buttons[0], 'click').subscribe(() => console.log('Clicked'));
+
+            // 从事件创建observable对象
+            Rx.Observable.fromEvent(buttons[1], 'click')
+                .scan((count) => count + 1, 0)
+                .subscribe((count) => {
+                    buttons[1].innerText = count;
+                    console.log(`Clicked ${count} times`);
+                });
+
+            // 1. 路径只能是相对路径和绝对路径
+            // 2. .js不能省略
+            // import Rx from '../node_modules/rxjs/_esm2015/Rx.js';
+
+            const observable = Rx.Observable.create((observer) => {
+                observer.next(1);
+                observer.next(2);
+                observer.next(3);
+                setTimeout(() => {
+                    observer.next(4);
+                    observer.complete();
+                }, 1000);
+            });
+
+            console.log('just before subscribe');
+            observable.subscribe({
+                next: (x) => console.log(`got value ${x}`),
+                error: (err) => console.error(`something wrong occurred: ${err}`),
+                complete: () => console.log('done')
+            });
+            console.log('just after subscribe');
+        </script>
+    </body>
+</html>
