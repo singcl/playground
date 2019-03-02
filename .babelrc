@@ -1,5 +1,5 @@
 {
-    "presets": ["flow" /* "env" */],
+    "presets": [/* "flow" */ "env"]
     // 转码class instance class field 语法
-    "plugins": ["transform-class-properties"]
+    // "plugins": ["transform-class-properties"]
 }

@@ -32,3 +32,12 @@ MinGW 中 make 为 mingw32-make
 ### #define VS const
 
 ![define-const](./img/const_define.png)
+
+## Babel 直接运行 ES6 代码
+
+https://babeljs.io/docs/en/6.26.3/babelrc
+
+```sh
+# babel-node
+npx babel-node rx/example1.js
+```
