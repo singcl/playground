@@ -8,6 +8,7 @@
     "@singcl/thunk-run": "^0.4.1",
     "@std/esm": "^0.26.0",
     "@types/node": "^10.3.5",
+    "axios": "^0.18.0",
     "co": "^4.6.0",
     "coffee-script": "^1.12.7",
     "coffeescript": "^2.3.1",
