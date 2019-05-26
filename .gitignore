@@ -4,3 +4,4 @@ test2.txt
 *.exe
 cmake-build-debug/
 c/build/
+debug

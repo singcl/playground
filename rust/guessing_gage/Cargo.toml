@@ -1,0 +1,9 @@
+[package]
+name = "guessing_gage"
+version = "0.1.0"
+authors = ["singcl <1276837689@qq.com>"]
+edition = "2018"
+
+[dependencies]
+
+rand = "0.3.14"
