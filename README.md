@@ -51,3 +51,5 @@ npx babel-node rx/example1.js
 一般4.x.x是兼容的，当然这规范的执行取决于这个package，而4.16.x相当于fix版本，你很难说明不符合前面那个规范的package一定会符合后面这个规范。
 如果不是很确定，你可以使用npm install xx -E固定版本
 ```
+
+~~~u
