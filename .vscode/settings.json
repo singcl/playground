@@ -14,5 +14,6 @@
     },
     // 当使用flow的时候才使用下面
     // "javascript.validate.enable": false,
-    "debug.node.autoAttach": "off"
+    "debug.node.autoAttach": "off",
+    "php.validate.executablePath": "C:\\php-7.3.6-nts-Win32-VC15-x64\\php.exe"
 }
