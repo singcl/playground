@@ -10,7 +10,8 @@
         "limits": "c",
         "stdlib.h": "c",
         "stdio.h": "c",
-        "windows.h": "c"
+        "windows.h": "c",
+        "math.h": "c"
     },
     // 当使用flow的时候才使用下面
     // "javascript.validate.enable": false,
