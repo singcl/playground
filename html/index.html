@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style type="text/css">
+            body {
+                margin: 0;
+                color: #393939;
+            }
+            p {
+                margin: 0;
+            }
+
+            .wrapper {
+                position: relative;
+                max-width: 920px;
+                background-color: #f7f7f7;
+                margin: 0 auto;
+                padding: 20px 20px 0;
+                font-family: PingFangSC-Medium, PingFang SC;
+            }
+
+            .done {
+                cursor: pointer;
+            }
+
+            .wrapper .title {
+                position: relative;
+                margin: 0;
+                margin-top: 30px;
+                margin-bottom: 15px;
+                text-align: center;
+            }
+
+            .circle-num {
+                display: block;
+                width: 20px;
+                height: 20px;
+                line-height: 20px;
+                border-radius: 15px;
+                background-color: #c4c4c4;
+                text-align: center;
+                color: #fff;
+            }
+
+            .circle-num.active {
+                background-color: #087afd;
+            }
+
+            .content {
+                position: relative;
+            }
+
+            .content__btn {
+                text-align: center;
+                padding: 30px 0 60px;
+            }
+
+            .details {
+                position: relative;
+                padding: 0 20px;
+            }
+            .details.line {
+                border-left: 2px solid #cbcbcb;
+            }
+            .details .circle-num {
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform: translate(-50%, 0);
+            }
+            .details__title {
+                position: relative;
+                word-break: break-all;
+                margin-bottom: 20px;
+            }
+            .card {
+                position: relative;
+                box-shadow: -2px -2px 4px 2px #e4e3e3, 2px 2px 4px 2px #e4e3e3;
+                padding: 10px;
+                border-radius: 15px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                background-color: #f3f2f9;
+                color: #3b3b3f;
+            }
+
+            .card__text {
+                padding: 5px 10px 15px;
+            }
+
+            .card__footer {
+                text-align: right;
+            }
+
+            .card-install {
+                position: relative;
+                box-shadow: -2px -2px 4px 2px #e4e3e3, 2px 2px 4px 2px #e4e3e3;
+                border-radius: 15px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                color: #3b3b3f;
+                background-color: #fafafc;
+            }
+
+            .card-install__header {
+                position: relative;
+                padding: 8px 10px 5px;
+                text-align: center;
+                border-bottom: 1px solid #ebeaef;
+            }
+
+            .card-install__header-inner {
+                position: relative;
+            }
+
+            .card-install__header-title {
+                font-family: PingFangSC-Medium, PingFang SC;
+                line-height: 28px;
+            }
+
+            .card-install__main-wrapper {
+                position: relative;
+                padding-top: 25px;
+                background-color: #f1f2f6;
+            }
+
+            .card-install__main {
+                position: relative;
+                background-color: #fafafc;
+                padding: 0 0 0 10px;
+            }
+
+            .card-install__footer {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 8px 10px;
+                font-family: PingFangSC-Medium, PingFang SC;
+            }
+
+            .card-btn {
+                border: 2px solid #2f82e4;
+                padding: 1px 8px;
+                border-radius: 15px;
+                background-color: #d8e5f6;
+                color: #2f82e4;
+                cursor: pointer;
+            }
+
+            .card-btn.link {
+                background-color: transparent;
+                border: none;
+            }
+            .button {
+                display: inline-block;
+                width: 140px;
+                padding: 13px 0;
+                color: #fff;
+                outline: none;
+                border: none;
+                background-color: #0379ff;
+                border-radius: 50px;
+                font-size: 16px;
+                font-family: PingFangSC-Medium, PingFang SC;
+            }
+
+            .icon-info {
+                padding: 8px 0;
+                border-bottom: 1px solid #ebeaef;
+            }
+
+            .icon-info__icon {
+                display: inline-block;
+                vertical-align: middle;
+                width: 50px;
+                height: 50px;
+                background-color: #f0f0f0;
+                border-radius: 8px;
+                background-size: cover;
+                background-image: url(data:image/png;base64,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);
+            }
+            .icon-info__text {
+                display: inline-block;
+                vertical-align: middle;
+                font-family: PingFangSC-Medium, PingFang SC;
+            }
+
+            .sign-info {
+                position: relative;
+                padding: 8px 10px 8px 30px;
+                font-size: 10px;
+                border-bottom: 1px solid #ebeaef;
+            }
+
+            .sign-info__item {
+                display: flex;
+            }
+
+            .sign-info__item:first-child {
+                margin-bottom: 5px;
+            }
+
+            .sign-info__label {
+                color: #bcbcbe;
+                margin-right: 5px;
+                width: 45px;
+            }
+            .sign-info__content {
+                word-break: break-all;
+                font-family: PingFangSC-Medium, PingFang SC;
+            }
+
+            .icon-check {
+                display: inline-block;
+                vertical-align: middle;
+                background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAC1ElEQVR4Xu2YQWsTQRSA31v14LV4VfAPeHBnD/4EEY8VEVFEFCnatCKSZLbaYiItIt1Z1CKKiCKi3sSTF3+A25s/QDx49yQo5kmEQgyZdObNJGR3J+d5b973zXs7QxBq/sOa80MQEDqg5gbCCNS8AcJHMIxAGIGaGwgjUPMGCLdAGIEwAjU3UIkRWPrcPd6L6GD0a8/H7Fjrq82Zll5Ao+i+BYD5HWglpBWT1WIbs9NYOwzf35Oot5YnK6um+5dWwCj4PjT+jg7bjEEpBejgCWE1j+Wa6en/E2azeBbWak8e4FYm5B3bGkslQAcPQCtKpB1b+FJ1gBYeUaq4fZcDXxoB2pkHbOWivc6FL4UAfdtDUwm54QI/8wK08AQ3VSLvucLPtIAxJ39DCXnfB/zMCtB/8OC6iuWmL/iZFKC954mWsyTNfMI7C1gs1g/lovnNV1Fj7vmGEmnua5/BPKyHUGO7ewR69AkQ5whgKxdywbU4fdvTNRWnD1zz6+J5AopOAYDxQNJ3SshT3CK19zzB1TyRD7l5TeJYApa2u++J4OTQBiwJ+rc9LmSivWUC4bKGJ6DoniCADyM2tpKgv+fxikraj13ATGNZAvrJG0VnHgD7/8YM/4wkjHnbX1Zx+4kpgOs6tgAXCfq3PVzKhXzqCmUT7ySAI0F/z8PFLJHPbIr3sdZZgI0ELTzChSyWz30A2ebwIsBEgnbmIzivjsoXtoX7Wu9NwG4SBv+63imeiM7lSfrSFwwnj1cBu0j4rz5EOpvF6StO0T5jvAswkYAUncmS1mufINxcExEwVgJGp1XcesMt2HfcxAQMSHgEAAcA8TsBLeexHPV48s1lnG+iAvpVLH+5Pffn597F/bhvc0M0fxhXNqWFExcwJQ72NkEAW11FAkMHVOQg2RihA9jqKhIYOqAiB8nGCB3AVleRwNABFTlINkboALa6igSGDqjIQbIx/gIQfetBH9hrMgAAAABJRU5ErkJggg==);
+                background-size: cover;
+                width: 16px;
+                height: 16px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <span class="done">Done</span>
+            <h3 class="title">两步添加图标到桌面</h3>
+            <div class="content">
+                <div class="details line">
+                    <div class="circle-num active">1</div>
+                    <div class="details__title">
+                        Click hear to download configuration profiles, and click
+                        "Allow"
+                    </div>
+                    <div class="card">
+                        <div class="card__text">
+                            <p>此网站正尝试下载一个配置文件。</p>
+                            <p>您要允许吗？</p>
+                        </div>
+                        <div class="card__footer">
+                            <span class="card-btn link">忽略</span>
+                            <span class="card-btn">允许</span>
+                        </div>
+                    </div>
+                    <div class="content__btn">
+                        <button class="button">Download</button>
+                    </div>
+                </div>
+
+                <div class="details">
+                    <div class="circle-num">2</div>
+                    <div class="details__title">
+                        Enter the Settings page,click to enter the download
+                        profile, and click "Install" at the right.
+                    </div>
+                    <div class="card-install">
+                        <div class="card-install__header">
+                            <div class="card-install__header-inner">
+                                <span
+                                    class="card-btn link"
+                                    style="
+                                        position: absolute;
+                                        left: 0;
+                                        top: 2px;
+                                    "
+                                    >取消</span
+                                >
+                                <span class="card-install__header-title"
+                                    >安装描述文件</span
+                                >
+                                <span
+                                    class="card-btn"
+                                    style="position: absolute; right: 0; top: 0"
+                                    >安装</span
+                                >
+                            </div>
+                        </div>
+                        <div class="card-install__main-wrapper">
+                            <div class="card-install__main">
+                                <div class="icon-info">
+                                    <span class="icon-info__icon"></span>
+                                    <span class="icon-info__text"
+                                        >Line图标文件</span
+                                    >
+                                </div>
+                                <div class="sign-info">
+                                    <div class="sign-info__item">
+                                        <span class="sign-info__label"
+                                            >签名者</span
+                                        >
+                                        <span class="sign-info__content">
+                                            <span
+                                                >iphone Distribution: sharpmobi
+                                                ltd(XFS3S9YP35)</span
+                                            >
+                                            <br />
+                                            <span style="color: #6fcc85">
+                                                <span style="vertical-align: middle;">已验证</span>
+                                                <i class="icon-check"></i
+                                            ></span>
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span class="sign-info__label"
+                                            >包含</span
+                                        >
+                                        <span class="sign-info__content"
+                                            >Web clip</span
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-install__footer">
+                            <span>更多详细信息</span>
+                            <span style="color: #cecece;">></span>
+                        </div>
+                    </div>
+                    <div class="content__btn">
+                        <button class="button">Settings page</button>
+                    </div>
+                </div>
+            </div>
+            <div></div>
+        </div>
+    </body>
+</html>
