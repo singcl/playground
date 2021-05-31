@@ -5,3 +5,4 @@ test2.txt
 cmake-build-debug/
 c/build/
 debug
+.DS_Store
