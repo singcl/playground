@@ -14,7 +14,7 @@
     "co": "^4.6.0",
     "coffee-script": "^1.12.7",
     "coffeescript": "^2.3.1",
-    "express": "^4.16.3",
+    "express": "^4.17.3",
     "greenlet": "^0.1.2",
     "progress-estimator": "^0.2.2",
     "promise": "^8.0.1",
